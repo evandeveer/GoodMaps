@@ -1,0 +1,292 @@
+:root {
+  --background-color: var(--bs-light);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+#root {
+  /* width: 90%; */
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.link {
+  color: #ff5757;
+  text-decoration: none;
+}
+
+h6 {
+  margin-top: 1em;
+  font-size: 0.75em;
+}
+
+.backButton {
+  background-color: transparent;
+  color: #ff5757;
+  border: 1px solid #ff5757;
+  border-radius: 5px;
+  padding: 0.4rem 0.9rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+.backButton:hover {
+  background-color: #ff5757;
+  color: #ffffff;
+}
+
+.suggestButton{
+  background-color: #ff5757;
+  border: 1px solid #ff5757;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  width:100%;
+  box-sizing: border-box;
+}
+.suggestButton.disabled {
+  background-color: #cccccc;
+  border: 1px solid #333;
+  color: #666666;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.helloButton{
+  background-color: #ff5757;
+  border: 1px solid #ff5757;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin: 1.5rem 0;
+  cursor: pointer;
+  transition: all 0.3s;
+  width:100%;
+  box-sizing: border-box;
+}
+.activity-info {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.activityName{
+  color: #7ed957;
+}
+.activityOpening{
+  color: #ffb800;
+}
+
+/* === FILTRES INTERACTIFS (CHIPS) === */
+.filter-chips-container {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0 1rem 0;
+  margin-bottom: 0.5rem;
+  scrollbar-width: thin;
+}
+.filter-chip {
+  background-color: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.filter-chip:hover {
+  border-color: #ff5757;
+  color: #ff5757;
+}
+.filter-chip.active {
+  background-color: #ff5757;
+  color: #ffffff;
+  border-color: #ff5757;
+  box-shadow: 0 2px 6px rgba(255, 87, 87, 0.3);
+}
+
+/* === CARROUSEL / LISTE DE CARTES D'ACTIVITÉS === */
+.activities-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.25rem 0 0.75rem 0;
+  text-align: left;
+}
+.activities-count {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+.activities-carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.25rem 0.25rem 1rem 0.25rem;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  text-align: left;
+}
+.activity-card {
+  min-width: 270px;
+  max-width: 270px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.activity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-color: #ff5757;
+}
+.activity-card.selected {
+  border-color: #ff5757;
+  border-width: 2px;
+  background-color: #fffaf9;
+  box-shadow: 0 4px 14px rgba(255, 87, 87, 0.15);
+}
+.activity-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.badge-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+.badge-distance {
+  font-size: 0.72rem;
+  background: #f3f4f6;
+  color: #4b5563;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.activity-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.4rem 0;
+  line-height: 1.3;
+}
+.activity-card-desc {
+  font-size: 0.8rem;
+  color: #6b7280;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+.activity-card-footer {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+.btn-card-action {
+  flex: 1;
+  text-align: center;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+.btn-card-view {
+  background: #f3f4f6;
+  color: #374151;
+  border-color: #e5e7eb;
+}
+.btn-card-view:hover {
+  background: #e5e7eb;
+}
+.btn-card-dir {
+  background: #ff5757;
+  color: #ffffff;
+}
+.btn-card-dir:hover {
+  background: #e04848;
+}
+
+/* === FICHE DE DÉTAIL AGRANDIE === */
+.activity-detail-card {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.activity-detail-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.btn-itinerary-lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #ff5757;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.btn-itinerary-lg:hover {
+  background-color: #e04848;
+  color: #ffffff;
+}
